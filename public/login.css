@@ -1,0 +1,115 @@
+/* Sign-in Page Styles */
+.signin-container {
+    background: #0f0f1a;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .signin-header {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .logo {
+    color: #00f5ff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .signin-box {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+  }
+  
+  .signin-box h1 {
+    color: white;
+    margin-bottom: 28px;
+    font-size: 2rem;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 16px 20px 10px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .input-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #8c8c8c;
+    transition: all 0.2s;
+    pointer-events: none;
+  }
+  
+  .input-group input:focus + label,
+  .input-group input:valid + label {
+    top: 10px;
+    transform: none;
+    font-size: 0.75rem;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background: #00f5ff;
+    color: #0f0f1a;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 24px;
+    cursor: pointer;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #b3b3b3;
+    font-size: 0.9rem;
+  }
+  
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .signup-prompt {
+    margin-top: 40px;
+    color: #737373;
+  }
+  
+  .signup-prompt a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .signup-prompt a:hover {
+    text-decoration: underline;
+  }
+  
+  .recaptcha-notice {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #8c8c8c;
+  }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NovaStream - Sign In</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="signin-container">
+        <div class="signin-header">
+            <div class="logo">NOVASTREAM</div>
+        </div>
+
+        <div class="signin-box">
+            <h1>Sign In</h1>
+
+            <form id="signinForm">
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email or phone number</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <button type="submit">Sign In</button>
+
+                <div class="options">
+                    <label class="remember">
+                        <input type="checkbox" checked>
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="help">Need help?</a>
+                </div>
+            </form>
+
+            <div class="signup-prompt">
+                <span>New to NovaStream?</span>
+                <a href="#" id="signupLink">Sign up now</a>.
+            </div>
+
+            <div class="recaptcha-notice">
+                This page is protected by Google reCAPTCHA to ensure you're not a bot.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signinForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: document.getElementById('email').value,
+              password: document.getElementById('password').value
+            })
+          });
+          const result = await response.json();
+          if (result.success) window.location.href = result.redirect;
+          else alert(result.error);
+        });
+        </script>
+</body>
+</html> 
